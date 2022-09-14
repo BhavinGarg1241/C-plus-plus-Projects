@@ -672,9 +672,4 @@ int custfunc(){
 	}
 }
 
-
-
-
-
-
-
+//Credits- Bhavin Garg
