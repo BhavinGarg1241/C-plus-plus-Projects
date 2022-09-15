@@ -25,7 +25,7 @@ void Book_Inventory::menu(){
 	cout<<"Enter 6 to buy book."<<endl;
 	cout<<"Enter 7 to exit."<<endl<<endl;
 	
-	cout<<"Note: "<<"Use underscore instead of space"<<endl<<"      where ever reqiured in names of books and auhtors"<<endl;
+		cout<<"Note: "<<"Use underscore instead of space"<<endl<<"      where ever reqiured in names of books and auhtors"<<endl;
 }
 
 //Add Book
@@ -62,7 +62,7 @@ void Book_Inventory::show_book(){
 		file >> book_name >> author_name >> cost >> stock;
 		
 		while(!file.eof()){
-			cout<<left<<setw(20)<<book_name<<left<<setw(20)<<author_name<<left<<setw(15)<<cost<<endl<<endl;
+			cout<<left<<setw(20)<<book_name<<left<<setw(20)<<author_name<<left<<setw(15)<<cost<<left<<setw(15)<<stock<<endl<<endl;
 			file >> book_name >> author_name >> cost >> stock;
 		}
 		system("pause");
@@ -84,17 +84,17 @@ void Book_Inventory::search_book(){
 	}else{
 		cout<<"Enter Book name to be searched : ";
 		cin>>book;
-//		cout<<"Enter author name to be searched : ";
-//		cin>>author;
+		cout<<"Enter author name to be searched : ";
+		cin>>author;
 		file >> book_name >> author_name >> cost >>stock;
 		system("cls");
 		cout<<setiosflags(ios::right)<<setw(20)<<"Search Books"<<endl<<endl;
 		cout<<left<<setw(20)<<"Book"<<left<<setw(20)<<"Author"<<left<<setw(15)<<"Cost"<<left<<setw(15)<<"No. of Copies"<<endl<<endl;
 		while(!file.eof()){
-			if(book==book_name){
+			if(book==book_name && author==author_name){
 				cout<<left<<setw(20)<<book_name<<left<<setw(20)<<author_name<<left<<setw(15)<<cost<<left<<setw(15)<<stock<<endl<<endl;
 				count++;
-//				break;
+				break;
 			}
 			file >> book_name >> author_name >> cost >> stock;
 		}
@@ -312,4 +312,4 @@ int main(){
 }
 
 
-//Credits - Bhavin Garg
+//Credits- Bhavin Garg
